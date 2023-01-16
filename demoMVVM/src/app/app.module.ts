@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PerduComponent } from './pages/perdu/perdu.component';

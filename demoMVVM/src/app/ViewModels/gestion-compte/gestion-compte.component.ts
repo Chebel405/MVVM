@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteBancaire } from 'src/app/Models/compte-bancaire';
+import { FormGroup } from '@angular/forms';
+import {FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-gestion-compte',
@@ -12,10 +14,29 @@ export class GestionCompteComponent  {
      */
     public compte: CompteBancaire;
     public soldeActuel: number;
+    public montantDepot:FormGroup;
 
+    /**
+     * Constructor de mon ViewModel
+     */
     constructor(){
       this.compte = new CompteBancaire(0);
       this.soldeActuel = this.compte.getSolde();
+      this.montantDepot = new FormGroup({
+        montant: new FormControl(Number)
+      });
+
+  }
+
+  /**
+   * méthode pour recuperer l'input du formulaire et
+   * incrementer le solde du compte avec cette valeur
+   */
+  public deposer():void{
+    this.compte.ajouterMontant(this.montantDepot.controls['montant'].value);
+    this.soldeActuel = this.compte.getSolde();
+    //Reinitialisation des champs du formulaire
+    this.montantDepot.reset();
 
   }
 
