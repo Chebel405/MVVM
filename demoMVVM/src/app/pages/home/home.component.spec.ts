@@ -19,5 +19,18 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    /**
+     * .toBe() => egalité à (équivalent au ===)
+     * .toEqual() => egalité à (équivalent au ==)
+     * .toContain() => contient l'élément donnée, utilisateur sur un array ou un string
+     * .toBeDefined() => est défini
+     * .toBeNull() => est null
+     * .toBeTruthy() /.
+     */
   });
+
+  /**
+   * Mock
+   */
 });

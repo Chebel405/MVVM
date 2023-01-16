@@ -12,5 +12,17 @@
         <label for="depot">Montant à déposer : </label>
         <input type="number" id="depot" name="depot" formControlName="montant">
     </div>
+    <button type="button" (click)="tadam()"> tadam </button>
     <button type="submit"> Deposer votre argent ! </button>
+</form>
+
+<!--Formulaire retirer argent-->
+
+<form [formGroup]="montantDepot" (ngSubmit)="retirer()">
+    <div>
+        <label for="retire">Montant à retirer : </label>
+        <input type="number" id="retire" name="retire" formControlName="montant">
+    </div>
+    <button type="submit" (click)="tadam()"> tadam </button>
+    <button type="submit"> Retirer votre argent ! </button>
 </form>

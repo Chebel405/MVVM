@@ -40,5 +40,28 @@ export class GestionCompteComponent  {
 
   }
 
+    /**
+   * tadam()
+   */
+    public tadam():void{
+      alert("Tadam");
+    };
+
+  /**
+   * méthode pour recuperer l'input du formulaire et
+   * decrementer le solde du compte avec cette valeur 
+   */
+  public retirer():void{
+    try{
+      this.compte.retirerMontant(this.montantDepot.controls['montant'].value);
+      this.soldeActuel = this.compte.getSolde();
+    } catch (error: any){
+      //gestion de l'erreur
+      alert(error.message);
+    }    
+    //Reinitialisation des champs du formulaire
+     this.montantDepot.reset();
+  }
+
 
 }
