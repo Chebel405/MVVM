@@ -23,7 +23,7 @@ export class CompteBancaire {
     public getSolde():number {
         return this.solde;
     }
-    
+
     /**
      * Methode pour ajouter un montant au solde du compte
      * @param montant montant à ajouter au solde
@@ -39,7 +39,7 @@ export class CompteBancaire {
     public retirerMontant(montant:number):void{
         if(this.solde >= montant){
             this.solde -= montant;
-        }else {
+        } else {
             console.log("Solde insuffisant");
             throw new Error("Solde insuffisant");
             
